@@ -1,18 +1,23 @@
 import type { Config } from "tailwindcss";
+import { nextui } from "@nextui-org/react";
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        sans: ["var(--font-ubuntu-sans)"],
+        mono: ["var(--font-ubuntu-sans-mono)"],
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui(), require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "retro"],
+  },
 } satisfies Config;
