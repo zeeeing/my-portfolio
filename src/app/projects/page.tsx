@@ -1,7 +1,3 @@
-import { ProjectBentoGrid } from "../components/ProjectBentoGrid";
-
-export default function Projects () {
-  return (
-    <ProjectBentoGrid />
-  )
+export default function Projects() {
+  return <div>Projects</div>;
 }
