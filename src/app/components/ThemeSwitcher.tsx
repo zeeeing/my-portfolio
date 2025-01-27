@@ -8,25 +8,34 @@ import { MoonIcon, SunIcon } from "../ui/icons";
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = theme || "retro"; // Default theme if no saved theme
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    // Get the saved theme from localStorage or use default
+    const savedTheme = localStorage.getItem("theme") || "retro";
+    setTheme(savedTheme);
+    setIsSelected(savedTheme === "dark");
   }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      setIsSelected(theme === "dark");
+    }
+  }, [theme, mounted]);
 
   if (!mounted) return null;
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "retro" : "dark"; // Toggle between dark and retro
-    setTheme(newTheme); // Set the theme using next-themes
-    document.documentElement.setAttribute("data-theme", newTheme);
+    const newTheme = theme === "dark" ? "retro" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
   return (
     <>
       <Switch
-        checked={theme === "dark"}
+        isSelected={isSelected}
         color="default"
         size="lg"
         onChange={toggleTheme}
