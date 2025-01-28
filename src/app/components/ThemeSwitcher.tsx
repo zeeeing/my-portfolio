@@ -2,43 +2,29 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Switch } from "@nextui-org/react";
+import { Switch } from "@heroui/react";
 import { MoonIcon, SunIcon } from "../ui/icons";
 
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [isSelected, setIsSelected] = useState(false);
 
+  // safely show UI once mounted
   useEffect(() => {
     setMounted(true);
-    // Get the saved theme from localStorage or use default
-    const savedTheme = localStorage.getItem("theme") || "retro";
-    setTheme(savedTheme);
-    setIsSelected(savedTheme === "dark");
   }, []);
-
-  useEffect(() => {
-    if (mounted) {
-      setIsSelected(theme === "dark");
-    }
-  }, [theme, mounted]);
-
   if (!mounted) return null;
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "retro" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+  const handleThemeToggle = () => {
+    setTheme(theme === "purple-dark" ? "orange-light" : "purple-dark");
   };
 
   return (
     <>
       <Switch
-        isSelected={isSelected}
-        color="default"
+        isSelected={theme === "purple-dark"}
+        onValueChange={handleThemeToggle}
         size="lg"
-        onChange={toggleTheme}
         thumbIcon={({ isSelected, className }) =>
           isSelected ? (
             <MoonIcon className={className} />
