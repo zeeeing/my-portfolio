@@ -3,9 +3,11 @@ import { ThemeSwitcher } from "./components/ThemeSwitcher";
 
 export default function Header() {
   return (
-    <div className="fixed top-0 left-0 w-full z-50 font-serif font-bold">
-      <nav className="flex justify-between items-center p-6">
-        <div className="text-2xl">CZJ</div>
+    <div className="fixed max-w-[90%] xl:max-w-[1223px] w-full z-10 select-none">
+      <div className="flex justify-between items-center px-6 py-4 rounded-2xl bg-[#7373731f] mt-4 sm:mt-8 backdrop-blur font-serif font-bold">
+        <div className="text-2xl">
+          <Link href={"/"}>CZJ</Link>
+        </div>
         <div className="flex gap-12">
           <Link href={"/"}>Home</Link>
           <Link href={"/projects"}>Projects</Link>
@@ -14,7 +16,7 @@ export default function Header() {
         <div>
           <ThemeSwitcher />
         </div>
-      </nav>
+      </div>
     </div>
   );
 }

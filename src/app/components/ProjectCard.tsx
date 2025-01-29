@@ -27,11 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: project.id * 0.2 }} // use id key to determine the delay of transition
     >
-      <Card
-        isBlurred
-        className="border-none bg-background/60 dark:bg-default-100/50"
-        shadow="sm"
-      >
+      <Card className="bg-[#7373731f]" shadow="sm">
         <CardBody>
           <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
             <div className="relative col-span-6 md:col-span-4">
@@ -46,8 +42,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
             <div className="flex flex-col col-span-6 md:col-span-8">
               <div className="flex flex-col justify-between items-start gap-6">
-                <h2 className="font-bold text-xl">{project.title}</h2>
-                <p className="font-sans">{project.description}</p>
+                <h2 className="text-2xl font-bold">{project.title}</h2>
+                <p>{project.description}</p>
                 <div>
                   <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool, index) => (
