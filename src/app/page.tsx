@@ -11,8 +11,8 @@ export default function Home() {
           <span className="text-5xl text-gray-500">I'm</span> Zing Jen,
         </h2>
         <ul className="flex flex-col text-xl text-secondary font-semibold pt-2">
-          <li>{`<3rd year engineering student @ NUS />`}</li>
-          <li>{`<Aspiring software engineer />`}</li>
+          <li>{`<3rd Year Engineering Undergraduate @ NUS />`}</li>
+          <li>{`<Aspiring Software Engineer />`}</li>
         </ul>
       </div>
       <Button color="primary" variant="flat" size="lg" radius="lg">
