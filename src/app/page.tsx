@@ -1,18 +1,23 @@
-import { CodeMockup } from "./components/CodeMockup";
+"use client";
+
+import { Button } from "@heroui/react";
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-8 flex flex-col lg:flex-row justify-center items-center h-screen font-sans gap-12">
-      <div className="flex flex-col space-y-4 text-center lg:text-left">
-        <h1 className="text-8xl font-bold">Hi There.</h1>
-        <h2 className="text-5xl font-semibold">I'm Zing Jen.</h2>
-        <span className="text-lg">
-          Penultimate Year Engineering @ NUS and aspiring Software Engineer.
-        </span>
+    <div className="flex flex-col justify-center items-center h-screen w-full font-serif gap-12">
+      <div className="flex flex-col text-center p-4 gap-6">
+        <h1 className="text-5xl font-bold text-secondary">Hi There!</h1>
+        <h2 className="text-8xl font-black text-primary">
+          <span className="text-5xl text-gray-500">I'm</span> Zing Jen,
+        </h2>
+        <ul className="flex flex-col text-xl text-secondary font-semibold pt-2">
+          <li>{`<3rd year engineering student @ NUS />`}</li>
+          <li>{`<Aspiring software engineer />`}</li>
+        </ul>
       </div>
-      <div className="w-full max-w-2xl lg:w-1/2">
-        <CodeMockup />
-      </div>
+      <Button color="primary" variant="flat" size="lg" radius="lg">
+        View Projects
+      </Button>
     </div>
   );
 }

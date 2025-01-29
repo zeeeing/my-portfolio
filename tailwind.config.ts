@@ -49,17 +49,17 @@ export default {
               foreground: "#FFFFFF",
             },
             secondary: {
-              50: "#E6F2FF",
-              100: "#CCE6FF",
-              200: "#99CCFF",
-              300: "#66B3FF",
-              400: "#3399FF",
-              500: "#0077E6", // A complementary blue
-              600: "#0066CC",
-              700: "#0055B3",
-              800: "#004499",
-              900: "#003380",
-              DEFAULT: "#0077E6",
+              50: "#F1F6F1",
+              100: "#E1ECE1",
+              200: "#C3D8C3",
+              300: "#A5C3A5",
+              400: "#87AF87",
+              500: "#699A69", // Darker, muted green
+              600: "#578058",
+              700: "#466646",
+              800: "#344D35",
+              900: "#243324",
+              DEFAULT: "#699A69",
               foreground: "#FFFFFF",
             },
             success: {
