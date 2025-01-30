@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
 
-export default function AppWrapper({
+export default function LoadingWrapper({
   children,
 }: {
   children: React.ReactNode;

@@ -10,13 +10,13 @@ export default function Home() {
   const shakeAnimation = {
     initial: { rotate: 0 },
     animate: { rotate: [0, -10, 10, -10, 0] },
-    transition: { delay: 1, duration: 0.5, ease: "easeInOut" },
+    transition: { delay: 0.5, duration: 0.5, ease: "easeInOut" },
   };
 
   const fadeInUp = (delay = 0) => ({
     initial: { opacity: 0, y: "1rem" },
     animate: { opacity: 1, y: "0%" },
-    transition: { delay, duration: 0.7, ease: "easeOut" },
+    transition: { delay, duration: 0.5, ease: "easeOut" },
   });
 
   return (
@@ -25,7 +25,6 @@ export default function Home() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
     >
       <div className="flex flex-col text-center p-4 gap-6">
         <motion.h1
@@ -36,20 +35,20 @@ export default function Home() {
         </motion.h1>
         <motion.h2
           className="text-8xl font-serif font-bold text-primary"
-          {...fadeInUp(1.5)}
+          {...fadeInUp(1.2)}
         >
           <span className="text-5xl text-gray-500">I'm</span> Zing Jen,
         </motion.h2>
         <motion.ul
           className="flex flex-col text-xl text-secondary font-medium pt-2"
-          {...fadeInUp(2)}
+          {...fadeInUp(1.4)}
         >
           <li>{`<3rd Year Engineering Undergraduate @ NUS />`}</li>
           <li>{`<Aspiring Software Engineer />`}</li>
         </motion.ul>
       </div>
 
-      <motion.div {...fadeInUp(2.5)}>
+      <motion.div {...fadeInUp(1.6)}>
         <Button
           as={Link}
           href={"/projects"}
@@ -64,7 +63,7 @@ export default function Home() {
 
       <motion.div
         className="fixed bottom-0 left-0 w-full py-10"
-        {...fadeInUp(3)}
+        {...fadeInUp(2)}
       >
         <div className="flex flex-col items-center gap-4">
           <p className="text-xl text-secondary font-medium">Connect with me:</p>

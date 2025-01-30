@@ -11,18 +11,24 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(onComplete, 1000); // remove from DOM
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, 10);
+    const delay = 200; // delay before counting starts
 
-    return () => clearInterval(interval);
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            setTimeout(onComplete, 1000); // remove from DOM
+            return 100;
+          }
+          return prev + 1;
+        });
+      }, 10);
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timeout);
   }, [onComplete]);
 
   return (

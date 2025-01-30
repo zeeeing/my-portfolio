@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Ubuntu_Sans_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import AppWrapper from "./AppWrapper";
+import LoadingWrapper from "./LoadingWrapper";
 
 const ubuntuSansMono = Ubuntu_Sans_Mono({
   variable: "--font-ubuntu-sans-mono",
@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${ubuntuSansMono.className} antialiased max-w-[90%] xl:max-w-[1223px] mx-auto`}
       >
         <Providers>
-          <AppWrapper>{children}</AppWrapper>
+          <LoadingWrapper>{children}</LoadingWrapper>
         </Providers>
       </body>
     </html>
