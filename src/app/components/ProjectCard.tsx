@@ -24,8 +24,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: project.id * 0.2 }} // use id key to determine the delay of transition
+      animate={isInView && { opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: project.id * 0.2 }}
     >
       <Card className="bg-[#7373731f]" shadow="sm">
         <CardBody>
