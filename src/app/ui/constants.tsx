@@ -16,7 +16,7 @@ export const contacts = [
 export const projects = [
   {
     id: 1,
-    image: "/path/to/image1.jpg",
+    image: "/Hypercharged_CC.jpeg",
     title: "Hypercharged.CC",
     description:
       "A comprehensive web application designed to provide real-time, competitive statistics from the SuperCell Brawl Stars API. Developed as a full-stack solution in collaboration with a team of three, this passion project showcases our dedication to the Brawl Stars community.",
@@ -30,11 +30,11 @@ export const projects = [
     image: "/path/to/image2.jpg",
     title: "WriteNow",
     description:
-      "WriteNow revolutionizes task management with seamless AI-driven workflows. Sync your Google calendar and tasks while leveraging OpenAI's cutting-edge capabilities for smarter meeting and task management.",
+      "WriteNow revolutionizes task management with seamless AI-driven workflows. Sync your Google mail while leveraging OpenAI's cutting-edge capabilities for smarter meeting and task management.",
     tools: [
       "ReactJS",
       "TailwindCSS",
-      "Motion",
+      "Framer Motion",
       "Axios",
       "Python",
       "AWS",
@@ -51,10 +51,10 @@ export const projects = [
     image: "/path/to/image3.jpg",
     title: "Zing Jen's Portfolio",
     description:
-      "My personal portfolio showcasing the work I’ve done in software development and design.",
+      "A portfolio about an aspiring software engineer.",
     tools: ["NextJS", "TailwindCSS", "Motion"],
     year: 2025,
-    liveLink: "https://chewzingjen.vercel.app",
+    liveLink: "https://zingjen.vercel.app",
     githubLink: "https://github.com/zeeeing/my-portfolio",
   },
 ];
