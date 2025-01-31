@@ -1,14 +1,20 @@
 "use client";
 
 import React, { useRef } from "react";
-import { Card, CardBody, Image, Chip } from "@heroui/react";
+import Link from "next/link";
+import { Card, CardBody, Image, Chip, Button } from "@heroui/react";
 import { motion, useInView } from "motion/react";
+import { GitHubIcon, GlobeIcon } from "../ui/icons";
+import { isEmpty } from "lodash";
 
 interface Project {
   id: number;
   image: string;
   title: string;
   description: string;
+  year: number;
+  liveLink: string;
+  githubLink: string;
   tools: string[];
 }
 
@@ -18,7 +24,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
     <motion.div
@@ -34,7 +40,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <Image
                 alt={project.title}
                 className="object-cover"
-                height={250}
+                height={300}
                 shadow="md"
                 src={project.image}
                 width="100%"
@@ -43,7 +49,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             <div className="flex flex-col col-span-6 md:col-span-8">
               <div className="flex flex-col justify-between items-start gap-6">
                 <h2 className="text-2xl font-bold">{project.title}</h2>
-                <p>{project.description}</p>
+                <p className="text-justify">{project.description}</p>
                 <div>
                   <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool, index) => (
@@ -52,6 +58,40 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                       </Chip>
                     ))}
                   </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {!isEmpty(project.liveLink) && (
+                    <Link
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="flat"
+                        color="primary"
+                        size="sm"
+                        startContent={<GlobeIcon />}
+                      >
+                        View Website
+                      </Button>
+                    </Link>
+                  )}
+                  {!isEmpty(project.githubLink) && (
+                    <Link
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="flat"
+                        color="primary"
+                        size="sm"
+                        startContent={<GitHubIcon />}
+                      >
+                        View Source Code
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

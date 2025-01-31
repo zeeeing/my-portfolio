@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCard } from "../components/ProjectCard";
-import { projects } from "../constants/constants";
+import { projects } from "../ui/constants";
 
 export default function Projects() {
   return (

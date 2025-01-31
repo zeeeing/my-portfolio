@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@heroui/react";
 import { motion } from "motion/react";
 import { GitHubIcon, LinkedInIcon, EmailIcon } from "./ui/icons";
-import { contacts } from "./constants/constants";
+import { contacts } from "./ui/constants";
 
 export default function Home() {
   const fadeInUp = {
