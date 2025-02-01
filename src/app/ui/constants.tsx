@@ -16,7 +16,7 @@ export const contacts = [
 export const projects = [
   {
     id: 1,
-    image: "/Hypercharged_CC.jpeg",
+    image: "/hypercharged_cc_thumbnail.png",
     title: "Hypercharged.CC",
     description:
       "A comprehensive web application designed to provide real-time, competitive statistics from the SuperCell Brawl Stars API. Developed as a full-stack solution in collaboration with a team of three, this passion project showcases our dedication to the Brawl Stars community.",
@@ -50,7 +50,7 @@ export const projects = [
   },
   {
     id: 3,
-    image: "/path/to/image3.jpg",
+    image: "/zingjen_portfolio_thumbnail.png",
     title: "Zing Jen's Portfolio",
     description: "An aspiring software engineer's portfolio.",
     tools: ["NextJS", "TailwindCSS", "Motion"],
