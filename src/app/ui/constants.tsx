@@ -50,11 +50,20 @@ export const projects = [
     id: 3,
     image: "/path/to/image3.jpg",
     title: "Zing Jen's Portfolio",
-    description:
-      "A portfolio about an aspiring software engineer.",
+    description: "An aspiring software engineer's portfolio.",
     tools: ["NextJS", "TailwindCSS", "Motion"],
     year: 2025,
     liveLink: "https://zingjen.vercel.app",
     githubLink: "https://github.com/zeeeing/my-portfolio",
+  },
+  {
+    id: 4,
+    image: "/path/to/image4.jpg",
+    title: "Asteroids (1976 Atari)",
+    description: "A simple game of trigonometry.",
+    tools: ["Javascript", "HTML Canvas"],
+    year: 2025,
+    liveLink: "",
+    githubLink: "https://github.com/zeeeing/asteroids",
   },
 ];
