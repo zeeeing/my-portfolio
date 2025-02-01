@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
+} from "@heroui/react";
 import { motion } from "motion/react";
+import { Download, ExternalLink, ChevronsDown } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export default function Header() {
@@ -39,8 +47,46 @@ export default function Header() {
             <Link href={"/about"}>About</Link>
           </motion.div>
         </div>
-        <div>
-          <ThemeSwitcher />
+        <div className="flex gap-4">
+          <div id="resumeDropdown">
+            <Dropdown>
+              <DropdownTrigger>
+                <Button
+                  variant="flat"
+                  size="sm"
+                  color="primary"
+                  endContent={<ChevronsDown size={16} />}
+                >
+                  Resume
+                </Button>
+              </DropdownTrigger>
+              <DropdownMenu>
+                <DropdownItem
+                  key="view"
+                  startContent={<ExternalLink size={16} />}
+                >
+                  <Link
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Online
+                  </Link>
+                </DropdownItem>
+                <DropdownItem
+                  key="download"
+                  startContent={<Download size={16} />}
+                >
+                  <a href="/resume.pdf" download="Zing_Jen_Resume.pdf">
+                    Download Resume
+                  </a>
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+          <div id="themeSwitcher">
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </div>
