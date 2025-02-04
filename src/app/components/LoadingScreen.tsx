@@ -11,7 +11,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const delay = 200; // delay before counting starts
+    const delay = 100; // delay before counting starts
 
     const timeout = setTimeout(() => {
       const interval = setInterval(() => {
