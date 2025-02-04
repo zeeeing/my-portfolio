@@ -19,7 +19,7 @@ export const projects = [
     image: "/hypercharged_cc_thumbnail.png",
     title: "Hypercharged.CC",
     description:
-      "A comprehensive web application designed to provide real-time, competitive statistics from the SuperCell Brawl Stars API. Developed as a full-stack solution in collaboration with a team of three, this passion project showcases our dedication to the Brawl Stars community.",
+      "Originally a passion project, Hypercharged.CC is a full-stack web application that delivers real-time, competitive statistics for dedicated players of Brawl Stars — a mobile game developed by Supercell.",
     tools: ["ReactJS", "TailwindCSS", "GSAP", "Axios", "MongoDB", "AWS"],
     year: "2024 - Present",
     liveLink: "https://hypercharged.cc",
@@ -31,7 +31,7 @@ export const projects = [
     image: "/path/to/image2.jpg",
     title: "WriteNow",
     description:
-      "WriteNow revolutionizes task management with seamless AI-driven workflows. Sync your Google mail while leveraging OpenAI's cutting-edge capabilities for smarter meeting and task management.",
+      "WriteNow is a task management platform that integrates Google account synchronization with AI-driven workflows. Powered by OpenAI, it streamlines task organisation and meeting management for a more efficient workflow.",
     tools: [
       "ReactJS",
       "TailwindCSS",
@@ -52,7 +52,7 @@ export const projects = [
     id: 3,
     image: "/zingjen_portfolio_thumbnail.png",
     title: "Zing Jen's Portfolio",
-    description: "An aspiring software engineer's portfolio.",
+    description: "A collection of the work I have done so far.",
     tools: ["NextJS", "TailwindCSS", "Motion"],
     year: "2025 - Present",
     liveLink: "https://zingjen.vercel.app",
@@ -62,8 +62,9 @@ export const projects = [
   {
     id: 4,
     image: "/path/to/image4.jpg",
-    title: "Asteroids (1976 Atari Game)",
-    description: "A simple game of trigonometry.",
+    title: "Asteroids",
+    description:
+      "A recreation of the classic 1976 Atari game built with vanilla JavaScript.",
     tools: ["JavaScript", "HTML5 Canvas"],
     year: "2025",
     liveLink: "",

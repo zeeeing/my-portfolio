@@ -46,12 +46,6 @@ export default function Header() {
           >
             <Link href={"/projects"}>Projects</Link>
           </motion.div>
-          <motion.div
-            {...hoverAnimation}
-            className={isActive("/about") ? "text-primary" : ""}
-          >
-            <Link href={"/about"}>About</Link>
-          </motion.div>
         </div>
         <div className="flex gap-4">
           <div id="resumeDropdown">
@@ -72,7 +66,7 @@ export default function Header() {
                   startContent={<ExternalLink size={16} />}
                 >
                   <Link
-                    href="/resume.pdf"
+                    href="/ChewZingJen_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -83,7 +77,7 @@ export default function Header() {
                   key="download"
                   startContent={<Download size={16} />}
                 >
-                  <a href="/resume.pdf" download="Zing_Jen_Resume.pdf">
+                  <a href="/ChewZingJen_Resume.pdf" download="ChewZingJen_Resume.pdf">
                     Download Resume
                   </a>
                 </DropdownItem>
