@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
@@ -12,10 +12,22 @@ export default function LoadingWrapper({
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    const hasLoaded = sessionStorage.getItem("hasLoaded");
+    if (hasLoaded === "true") {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const handleLoadingComplete = () => {
+    sessionStorage.setItem("hasLoaded", "true");
+    setIsLoading(false);
+  };
+
   return (
     <>
       {isLoading ? (
-        <LoadingScreen onComplete={() => setIsLoading(false)} />
+        <LoadingScreen onComplete={handleLoadingComplete} />
       ) : (
         <motion.div
           initial={{ opacity: 0 }}

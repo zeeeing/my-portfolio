@@ -48,7 +48,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               />
               {project.comingSoon && (
                 <CardFooter className="absolute bottom-1 left-1 w-[calc(100%_-_8px)] justify-center py-2 z-5 bg-primary-300 overflow-hidden rounded-large shadow-small">
-                  <p className="text-tiny text-white/80">Coming Soon</p>
+                  <p className="text-sm text-white/80">Coming Soon</p>
                 </CardFooter>
               )}
             </div>
