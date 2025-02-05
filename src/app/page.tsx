@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import { motion } from "motion/react";
+import { useMediaQuery } from "react-responsive";
 import { GitHubIcon, LinkedInIcon, EmailIcon } from "./ui/icons";
 import { contacts } from "./ui/constants";
 
@@ -20,6 +21,10 @@ export default function Home() {
     },
   };
 
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
+  const buttonSize = isSmallScreen ? "md" : "lg";
+  const footerButtonSize = isSmallScreen ? "sm" : "md";
+
   return (
     <motion.div
       className="flex flex-col justify-center items-center h-screen w-full gap-12"
@@ -29,19 +34,19 @@ export default function Home() {
     >
       <div className="flex flex-col text-center p-4 gap-6">
         <motion.h1
-          className="text-5xl font-serif font-bold text-secondary"
+          className="text-2xl md:text-5xl font-serif font-bold text-secondary"
           variants={fadeInUp}
         >
           Hi There!
         </motion.h1>
         <motion.h2
-          className="text-8xl font-serif font-bold text-primary"
+          className="text-5xl md:text-8xl font-serif font-bold text-primary"
           variants={fadeInUp}
         >
           <span className="text-5xl text-gray-500">I'm</span> Zing Jen,
         </motion.h2>
         <motion.ul
-          className="flex flex-col text-xl text-secondary font-medium pt-2"
+          className="flex flex-col text-sm md:text-xl text-secondary font-medium pt-2"
           variants={fadeInUp}
         >
           <li>{`<3rd Year Engineering Undergraduate @ NUS />`}</li>
@@ -55,7 +60,7 @@ export default function Home() {
           href={"/projects"}
           color="primary"
           variant="flat"
-          size="lg"
+          size={buttonSize}
           radius="lg"
         >
           View Projects
@@ -67,7 +72,9 @@ export default function Home() {
         variants={fadeInUp}
       >
         <div className="flex flex-col items-center gap-4">
-          <p className="text-xl text-secondary font-medium">Connect with me:</p>
+          <p className="text-sm md:text-xl text-secondary font-medium">
+            Connect with me:
+          </p>
           <div className="flex gap-4 items-center">
             <Button
               as={Link}
@@ -77,6 +84,7 @@ export default function Home() {
               isIconOnly
               color="secondary"
               variant="flat"
+              size={footerButtonSize}
             >
               <GitHubIcon />
             </Button>
@@ -88,6 +96,7 @@ export default function Home() {
               isIconOnly
               color="secondary"
               variant="flat"
+              size={footerButtonSize}
             >
               <LinkedInIcon />
             </Button>
@@ -99,6 +108,7 @@ export default function Home() {
               isIconOnly
               color="secondary"
               variant="flat"
+              size={footerButtonSize}
             >
               <EmailIcon />
             </Button>

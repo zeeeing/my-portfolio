@@ -68,36 +68,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {!isEmpty(project.liveLink) && (
-                    <Link
+                    <Button
+                      as={Link}
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      variant="flat"
+                      color="primary"
+                      size="sm"
+                      startContent={<GlobeIcon />}
                     >
-                      <Button
-                        variant="flat"
-                        color="primary"
-                        size="sm"
-                        startContent={<GlobeIcon />}
-                      >
-                        View Website
-                      </Button>
-                    </Link>
+                      View Website
+                    </Button>
                   )}
                   {!isEmpty(project.githubLink) && (
-                    <Link
+                    <Button
+                      as={Link}
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      variant="flat"
+                      color="primary"
+                      size="sm"
+                      startContent={<GitHubIcon />}
                     >
-                      <Button
-                        variant="flat"
-                        color="primary"
-                        size="sm"
-                        startContent={<GitHubIcon />}
-                      >
-                        View Source Code
-                      </Button>
-                    </Link>
+                      View Source Code
+                    </Button>
                   )}
                 </div>
               </div>
