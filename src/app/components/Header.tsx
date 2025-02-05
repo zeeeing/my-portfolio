@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <div className="fixed max-w-[90%] xl:max-w-[1223px] w-full z-10 select-none">
-      <div className="relative flex justify-between items-center px-6 py-4 rounded-2xl bg-[#7373731f] mt-4 sm:mt-8 backdrop-blur font-bold">
+      <div className="relative flex justify-between items-center px-6 py-4 rounded-2xl bg-[#7373731f] mt-4 md:mt-8 backdrop-blur font-bold">
         {/* left section */}
         <motion.div {...hoverAnimationLogo} className="text-base md:text-2xl">
           <Link href={"/"}>CZJ</Link>

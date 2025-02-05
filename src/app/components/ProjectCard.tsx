@@ -41,7 +41,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <Image
                 alt={project.title}
                 className="object-cover z-0"
-                height={300}
+                height={275}
                 shadow="md"
                 src={project.image}
                 width="100%"
@@ -54,9 +54,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
             <div className="flex flex-col col-span-6 md:col-span-8">
               <div className="flex flex-col justify-between items-start gap-2">
-                <h2 className="text-3xl font-bold">{project.title}</h2>
-                <h3 className="text-xl">{project.year}</h3>
-                <p className="text-justify">{project.description}</p>
+                <h2 className="text-lg md:text-3xl font-bold">
+                  {project.title}
+                </h2>
+                <h3 className="text-base md:text-xl">{project.year}</h3>
+                <p className="text-xs md:text-base text-justify">
+                  {project.description}
+                </p>
                 <div>
                   <div className="flex flex-wrap gap-2 my-2">
                     {project.tools.map((tool, index) => (
