@@ -36,7 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       <Card isFooterBlurred className="w-full bg-[#7373731f]" shadow="sm">
         <CardBody>
-          <div className="grid grid-cols-6 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center">
+          <div className="grid grid-cols-6 md:grid-cols-12 gap-6 items-center justify-center">
             <div className="relative col-span-6 md:col-span-4">
               <Image
                 alt={project.title}
