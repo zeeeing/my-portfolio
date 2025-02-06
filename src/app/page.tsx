@@ -43,7 +43,8 @@ export default function Home() {
           className="text-5xl md:text-8xl font-serif font-bold text-primary"
           variants={fadeInUp}
         >
-          <span className="text-5xl text-gray-500">{`I'm`}</span> Zing Jen,
+          <span className="text-2xl md:text-5xl text-gray-500">{`I'm`}</span>{" "}
+          Zing Jen,
         </motion.h2>
         <motion.ul
           className="flex flex-col text-sm md:text-xl text-secondary font-medium pt-2"
