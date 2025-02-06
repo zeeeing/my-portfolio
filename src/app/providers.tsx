@@ -15,19 +15,12 @@ declare module "@react-types/shared" {
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return;
 
   return (
     <HeroUIProvider navigate={router.push}>
       <NextThemesProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="orange-light"
         themes={["orange-light", "purple-dark"]}
       >
         {children}

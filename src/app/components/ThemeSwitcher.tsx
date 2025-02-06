@@ -9,7 +9,7 @@ import { MoonIcon, SunIcon } from "../ui/icons";
 export function ThemeSwitcher() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  
+
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
   const buttonSize = isSmallScreen ? "md" : "lg";
 
