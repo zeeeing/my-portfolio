@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Zing Jen's Portfolio",
   description:
     "My portfolio featuring the collection of the work I have done so far.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
