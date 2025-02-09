@@ -19,7 +19,7 @@ export const projects = [
     image: "/hypercharged_cc_thumbnail.jpeg",
     title: "Hypercharged.CC",
     description:
-      "Started off as a passion project, Hypercharged.CC is a full-stack web application that delivers real-time, competitive statistics for dedicated players of Brawl Stars — a mobile game developed by Supercell.",
+      "Started off as a passion project, Hypercharged.CC is a full-stack web application that delivers accurate, real-time competitive statistics for dedicated players of Brawl Stars — a mobile game developed by Supercell.",
     tools: [
       "ReactJS",
       "TailwindCSS",
