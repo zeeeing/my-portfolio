@@ -40,7 +40,7 @@ export const projects = [
     image: "/path/to/image2.jpg",
     title: "WriteNow",
     description:
-      "WriteNow is a task management platform that integrates Google account synchronization with AI-driven workflows. Powered by OpenAI, it streamlines task organisation and meeting management for a more efficient workflow.",
+      "WriteNow is a digital PA web app that streamlines admin workflows—organising tasks, auto-scheduling meetings, generating AI meeting minutes, and turning email summaries into actionable tasks.",
     tools: [
       "ReactJS",
       "TailwindCSS",
