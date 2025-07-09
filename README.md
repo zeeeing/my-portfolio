@@ -1,8 +1,10 @@
 # Zing Jen's Portfolio
 
-Welcome to my portfolio!  
-Explore my projects, skills, and experiences showcasing my work and passion for software development.  
-Check out featured projects on my website with detailed descriptions and source code links.
+Welcome to my portfolio!
+
+Explore my projects, skills, and experiences showcasing my work and passion for software development.
+
+Built with Next.js, TailwindCSS, and Motion. Deployed with Vercel.
 
 ## 🌐 Visit
 
