@@ -1,10 +1,8 @@
-# Zing Jen's Portfolio
+# Welcome to My Portfolio!
 
-Welcome to my portfolio!
+Here, you'll get to know a bit more about me and my past work experiences - but more importantly, explore a collection of my past and present projects that showcase my passion for software development! :)
 
-Explore my projects, skills, and experiences showcasing my work and passion for software development.
-
-Built with Next.js, TailwindCSS, and Motion. Deployed with Vercel.
+_Portfolio built with Next.js, TailwindCSS, and Motion. Deployed with Vercel._
 
 ## 🌐 Visit
 
@@ -19,8 +17,6 @@ Hi there 👋 I’m an aspiring software engineer specialising in the HealthTech
 - Programming Languages: JavaScript, Java, Python, SQL, Haskell, Agda, R
 - Frontend: Next.js, React.js, TailwindCSS, HTML, CSS
 - Backend: Node.js, Express.js
-- Tools: Git, REST APIs
-
----
+- Tools: AWS, Git
 
 Feel free to reach out if you want to collaborate or learn more!
