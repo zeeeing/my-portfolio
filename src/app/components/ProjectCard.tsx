@@ -36,12 +36,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     >
       <Card isFooterBlurred className="w-full bg-[#7373731f]" shadow="sm">
         <CardBody>
-          <div className="grid grid-cols-6 md:grid-cols-12 gap-6 items-center justify-center">
-            <div className="relative col-span-6 md:col-span-5">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center justify-center">
+            <div className="relative col-span-12 md:col-span-5">
               <Image
                 alt={project.title}
-                className="object-cover z-0"
-                height={275}
+                className="object-cover z-0 min-h-[150px] h-[200px] md:h-[275px]"
                 shadow="md"
                 src={project.image}
                 width="100%"
@@ -52,7 +51,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </CardFooter>
               )}
             </div>
-            <div className="flex flex-col col-span-6 md:col-span-7">
+            <div className="flex flex-col col-span-12 md:col-span-7">
               <div className="flex flex-col justify-between items-start gap-2">
                 <h2 className="text-lg md:text-2xl font-bold">
                   {project.title}
@@ -64,7 +63,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <div>
                   <div className="flex flex-wrap gap-2 my-2">
                     {project.tools.map((tool, index) => (
-                      <Chip key={index} color="secondary" variant="flat">
+                      <Chip
+                        key={index}
+                        color="secondary"
+                        variant="flat"
+                        size="sm"
+                      >
                         {tool}
                       </Chip>
                     ))}

@@ -46,6 +46,7 @@ export const projects = [
       "TypeScript",
       "TailwindCSS",
       "FastAPI",
+      "Google OR-Tools",
       "Replit (Deployment)",
     ],
     year: "2025",

@@ -13,22 +13,33 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
   useEffect(() => {
     const delay = 100; // delay before counting starts
 
+    let interval: ReturnType<typeof setInterval> | null = null;
+    let completeTimeout: ReturnType<typeof setTimeout> | null = null;
+
     const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setProgress((prev) => {
           if (prev >= 100) {
-            clearInterval(interval);
-            setTimeout(onComplete, 1000); // remove from DOM
+            if (interval) {
+              clearInterval(interval);
+            }
+            completeTimeout = setTimeout(onComplete, 1000); // remove from DOM
             return 100;
           }
           return prev + 1;
         });
       }, 10);
-
-      return () => clearInterval(interval);
     }, delay);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+      if (completeTimeout) {
+        clearTimeout(completeTimeout);
+      }
+      clearTimeout(timeout);
+    };
   }, [onComplete]);
 
   return (
