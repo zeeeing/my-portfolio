@@ -26,6 +26,7 @@ export function ThemeSwitcher() {
   return (
     <>
       <Switch
+        aria-label="Toggle theme"
         isSelected={theme === "purple-dark"}
         onValueChange={handleThemeToggle}
         size={buttonSize}

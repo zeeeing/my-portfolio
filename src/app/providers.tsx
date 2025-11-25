@@ -19,7 +19,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <HeroUIProvider navigate={router.push}>
       <NextThemesProvider
         attribute="class"
-        defaultTheme="orange-light"
+        defaultTheme="system"
         themes={["orange-light", "purple-dark"]}
       >
         {children}
