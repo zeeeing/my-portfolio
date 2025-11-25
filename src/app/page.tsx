@@ -50,7 +50,7 @@ export default function Home() {
           className="flex flex-col text-sm md:text-xl text-secondary font-medium pt-2"
           variants={fadeInUp}
         >
-          <li>{`<3rd Year Engineering Undergraduate @ NUS />`}</li>
+          <li>{`<4th Year Engineering Undergraduate @ NUS />`}</li>
           <li>{`<Aspiring Software Engineer />`}</li>
         </motion.ul>
       </div>

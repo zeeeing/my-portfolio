@@ -37,7 +37,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <Card isFooterBlurred className="w-full bg-[#7373731f]" shadow="sm">
         <CardBody>
           <div className="grid grid-cols-6 md:grid-cols-12 gap-6 items-center justify-center">
-            <div className="relative col-span-6 md:col-span-4">
+            <div className="relative col-span-6 md:col-span-5">
               <Image
                 alt={project.title}
                 className="object-cover z-0"
@@ -52,13 +52,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </CardFooter>
               )}
             </div>
-            <div className="flex flex-col col-span-6 md:col-span-8">
+            <div className="flex flex-col col-span-6 md:col-span-7">
               <div className="flex flex-col justify-between items-start gap-2">
-                <h2 className="text-lg md:text-3xl font-bold">
+                <h2 className="text-lg md:text-2xl font-bold">
                   {project.title}
                 </h2>
-                <h3 className="text-base md:text-xl">{project.year}</h3>
-                <p className="text-xs md:text-base text-justify">
+                <h3 className="text-base md:text-lg">{project.year}</h3>
+                <p className="text-xs md:text-sm text-justify">
                   {project.description}
                 </p>
                 <div>
