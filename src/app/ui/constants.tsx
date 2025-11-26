@@ -37,10 +37,10 @@ export const projects = [
   },
   {
     id: 2,
-    image: "/residency_rostering_system_thumbnail.png",
-    title: "Residency Rostering System (R2S)",
+    image: "/residency_rotation_scheduler_thumbnail.png",
+    title: "Residency Rotation Scheduler (R2S)",
     description:
-      "A constraint-based rostering system that optimises timetable planning for post-grad medical residency.",
+      "A constraint-based optimisation tool for residency rotation scheduling powered by Google OR-Tools.",
     tools: [
       "React.js",
       "TypeScript",
@@ -50,7 +50,7 @@ export const projects = [
       "Replit (Deployment)",
     ],
     year: "2025",
-    liveLink: "https://im-residency-rostering.replit.app",
+    liveLink: "https://im-r2s.replit.app",
     githubLink: "https://github.com/zeeeing/residency-rostering-system",
     comingSoon: false,
   },
