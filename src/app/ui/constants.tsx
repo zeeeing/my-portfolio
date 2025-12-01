@@ -51,7 +51,7 @@ export const projects = [
     ],
     year: "2025",
     liveLink: "https://im-r2s.replit.app",
-    githubLink: "https://github.com/zeeeing/residency-rostering-system",
+    githubLink: "https://github.com/zeeeing/residency-rotation-scheduler",
     comingSoon: false,
   },
   {
