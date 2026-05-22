@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-ubuntu-sans)"],
-        mono: ["var(--font-ubuntu-sans-mono)"],
+        serif: ["var(--font-source-serif)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },

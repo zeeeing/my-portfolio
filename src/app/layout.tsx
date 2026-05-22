@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Ubuntu_Sans_Mono } from "next/font/google";
+import { Geist_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
 import LoadingWrapper from "./LoadingWrapper";
 
-const ubuntuSansMono = Ubuntu_Sans_Mono({
-  variable: "--font-ubuntu-sans-mono",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${ubuntuSansMono.className} antialiased max-w-[90%] xl:max-w-[1223px] mx-auto`}
+        className={`${sourceSerif.variable} ${geistMono.variable} font-serif antialiased max-w-[90%] xl:max-w-[1223px] mx-auto`}
       >
         <Providers>
           <LoadingWrapper>

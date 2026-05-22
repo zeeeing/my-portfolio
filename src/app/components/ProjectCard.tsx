@@ -1,31 +1,30 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { Card, CardBody, CardFooter, Image, Chip, Button } from "@heroui/react";
+import { Card, CardBody, Chip, Button } from "@heroui/react";
 import { motion, useInView } from "motion/react";
 import { GitHubIcon, GlobeIcon } from "../ui/icons";
-import { isEmpty } from "lodash";
-
-interface Project {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  year: string;
-  liveLink: string;
-  githubLink: string;
-  tools: string[];
-  comingSoon: boolean;
-}
+import type { Project, ProjectStatus } from "../types";
 
 interface ProjectCardProps {
   project: Project;
 }
 
+const statusConfig: Record<
+  ProjectStatus,
+  { label: string; color: "success" | "default" | "warning" }
+> = {
+  live: { label: "Live", color: "success" },
+  archived: { label: "Archived", color: "default" },
+  wip: { label: "In Progress", color: "warning" },
+};
+
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.05 });
+  const status = statusConfig[project.status];
 
   return (
     <motion.div
@@ -33,78 +32,74 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView && { opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: project.id * 0.05 }}
+      className="h-full"
     >
-      <Card isFooterBlurred className="w-full bg-[#7373731f]" shadow="sm">
-        <CardBody>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center justify-center">
-            <div className="relative col-span-12 md:col-span-5">
-              <Image
-                alt={project.title}
-                className="object-cover z-0 min-h-[150px] h-[200px] md:h-[275px]"
-                shadow="md"
-                src={project.image}
-                width="100%"
-              />
-              {project.comingSoon && (
-                <CardFooter className="absolute bottom-1 left-1 w-[calc(100%_-_8px)] justify-center py-2 z-5 bg-primary-300 overflow-hidden rounded-large shadow-small">
-                  <p className="text-sm text-white/80">Coming Soon</p>
-                </CardFooter>
-              )}
-            </div>
-            <div className="flex flex-col col-span-12 md:col-span-7">
-              <div className="flex flex-col justify-between items-start gap-2">
-                <h2 className="text-lg md:text-2xl font-bold">
+      <Card className="h-full w-full bg-[#7373731f]" shadow="sm">
+        <CardBody className="gap-4 p-4">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg bg-default-100">
+            <Image
+              alt={`${project.title} preview`}
+              className="object-cover"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              src={project.image}
+            />
+          </div>
+
+          <div className="flex flex-1 flex-col gap-3">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h2 className="text-lg font-bold md:text-xl">
                   {project.title}
                 </h2>
-                <h3 className="text-base md:text-lg">{project.year}</h3>
-                <p className="text-xs md:text-sm text-justify">
-                  {project.description}
-                </p>
-                <div>
-                  <div className="flex flex-wrap gap-2 my-2">
-                    {project.tools.map((tool, index) => (
-                      <Chip
-                        key={index}
-                        color="secondary"
-                        variant="flat"
-                        size="sm"
-                      >
-                        {tool}
-                      </Chip>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {!isEmpty(project.liveLink) && (
-                    <Button
-                      as={Link}
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="flat"
-                      color="primary"
-                      size="sm"
-                      startContent={<GlobeIcon />}
-                    >
-                      View Website
-                    </Button>
-                  )}
-                  {!isEmpty(project.githubLink) && (
-                    <Button
-                      as={Link}
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="flat"
-                      color="primary"
-                      size="sm"
-                      startContent={<GitHubIcon />}
-                    >
-                      View Source Code
-                    </Button>
-                  )}
-                </div>
+                <p className="text-sm text-default-500">{project.year}</p>
               </div>
+              <Chip color={status.color} size="sm" variant="flat">
+                {status.label}
+              </Chip>
+            </div>
+
+            <p className="text-sm leading-6 text-default-600">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tools.map((tool) => (
+                <Chip key={tool} color="secondary" size="sm" variant="flat">
+                  {tool}
+                </Chip>
+              ))}
+            </div>
+
+            <div className="mt-auto flex flex-wrap gap-2 pt-1">
+              {project.liveLink && (
+                <Button
+                  as={Link}
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="flat"
+                  color="primary"
+                  size="sm"
+                  startContent={<GlobeIcon />}
+                >
+                  Website
+                </Button>
+              )}
+              {project.githubLink && (
+                <Button
+                  as={Link}
+                  href={project.githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="flat"
+                  color="primary"
+                  size="sm"
+                  startContent={<GitHubIcon />}
+                >
+                  Source
+                </Button>
+              )}
             </div>
           </div>
         </CardBody>

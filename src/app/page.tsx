@@ -3,9 +3,8 @@
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import { motion } from "motion/react";
-import { useMediaQuery } from "react-responsive";
 import { GitHubIcon, LinkedInIcon, EmailIcon } from "./ui/icons";
-import { contacts } from "./ui/constants";
+import { contacts } from "./data/contacts";
 
 export default function Home() {
   const fadeInUp = {
@@ -21,10 +20,6 @@ export default function Home() {
     },
   };
 
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
-  const buttonSize = isSmallScreen ? "md" : "lg";
-  const footerButtonSize = isSmallScreen ? "sm" : "md";
-
   return (
     <motion.div
       className="flex flex-col justify-center items-center h-screen w-full gap-12"
@@ -34,13 +29,13 @@ export default function Home() {
     >
       <div className="flex flex-col text-center p-4 gap-6">
         <motion.h1
-          className="text-2xl md:text-5xl font-serif font-bold text-secondary"
+          className="text-2xl font-semibold md:text-5xl text-secondary"
           variants={fadeInUp}
         >
           Hi There!
         </motion.h1>
         <motion.h2
-          className="text-5xl md:text-8xl font-serif font-bold text-primary"
+          className="text-5xl font-semibold md:text-8xl text-primary"
           variants={fadeInUp}
         >
           <span className="text-2xl md:text-5xl text-gray-500">{`I'm`}</span>{" "}
@@ -61,7 +56,7 @@ export default function Home() {
           href={"/projects"}
           color="primary"
           variant="flat"
-          size={buttonSize}
+          size="lg"
           radius="lg"
         >
           View Projects
@@ -79,37 +74,40 @@ export default function Home() {
           <div className="flex gap-4 items-center">
             <Button
               as={Link}
+              aria-label="Open GitHub profile"
               href={contacts[0].link}
               target="_blank"
               rel="noopener noreferrer"
               isIconOnly
               color="secondary"
               variant="flat"
-              size={footerButtonSize}
+              size="md"
             >
               <GitHubIcon />
             </Button>
             <Button
               as={Link}
+              aria-label="Open LinkedIn profile"
               href={contacts[1].link}
               target="_blank"
               rel="noopener noreferrer"
               isIconOnly
               color="secondary"
               variant="flat"
-              size={footerButtonSize}
+              size="md"
             >
               <LinkedInIcon />
             </Button>
             <Button
               as={Link}
+              aria-label="Send email"
               href={contacts[2].link}
               target="_blank"
               rel="noopener noreferrer"
               isIconOnly
               color="secondary"
               variant="flat"
-              size={footerButtonSize}
+              size="md"
             >
               <EmailIcon />
             </Button>

@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ import {
   Button,
   DropdownSection,
 } from "@heroui/react";
-import { motion } from "motion/react";
+import { motion, type HTMLMotionProps } from "motion/react";
 import { Download, ExternalLink, ChevronsDown, AlignRight } from "lucide-react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
@@ -18,13 +18,19 @@ export default function Header() {
   const pathname = usePathname();
   const isActive = (path: string) => pathname === path;
 
-  const hoverAnimation = {
+  const hoverAnimation: Pick<
+    HTMLMotionProps<"div">,
+    "whileHover" | "whileTap" | "transition"
+  > = {
     whileHover: { scale: 1.2 },
     whileTap: { scale: 0.8 },
     transition: { duration: 0.2, ease: "easeInOut" },
   };
 
-  const hoverAnimationLogo = {
+  const hoverAnimationLogo: Pick<
+    HTMLMotionProps<"div">,
+    "whileHover" | "whileTap" | "transition"
+  > = {
     whileHover: { scale: 1.5 },
     whileTap: { scale: 0.8 },
     transition: { duration: 0.2, ease: "easeInOut" },
@@ -70,25 +76,19 @@ export default function Header() {
                 <DropdownItem
                   key="view"
                   startContent={<ExternalLink size={16} />}
+                  href="/ChewZingJen_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Link
-                    href="/ChewZingJen_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Online
-                  </Link>
+                  View Online
                 </DropdownItem>
                 <DropdownItem
                   key="download"
                   startContent={<Download size={16} />}
+                  href="/ChewZingJen_Resume.pdf"
+                  download="ChewZingJen_Resume.pdf"
                 >
-                  <a
-                    href="/ChewZingJen_Resume.pdf"
-                    download="ChewZingJen_Resume.pdf"
-                  >
-                    Download Resume
-                  </a>
+                  Download Resume
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -97,9 +97,14 @@ export default function Header() {
             <ThemeSwitcher />
             <Dropdown>
               <DropdownTrigger>
-                <div className="md:hidden">
+                <Button
+                  aria-label="Open navigation menu"
+                  className="md:hidden"
+                  isIconOnly
+                  variant="light"
+                >
                   <AlignRight />
-                </div>
+                </Button>
               </DropdownTrigger>
               <DropdownMenu>
                 <DropdownSection title="My Portfolio">

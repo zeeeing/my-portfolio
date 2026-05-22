@@ -23,7 +23,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             if (interval) {
               clearInterval(interval);
             }
-            completeTimeout = setTimeout(onComplete, 1000); // remove from DOM
+            completeTimeout = setTimeout(onComplete, 500);
             return 100;
           }
           return prev + 1;
@@ -44,7 +44,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-full h-screen flex justify-center items-center z-50"
+      className="fixed top-0 left-0 w-full h-screen flex justify-center items-center z-50 bg-background"
       initial={{ opacity: 1 }}
       animate={{ opacity: progress === 100 ? 0 : 1 }}
       transition={{ duration: 0.5, delay: 0.5 }} // fade out timing

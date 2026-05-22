@@ -26,19 +26,16 @@ export default function LoadingWrapper({
 
   return (
     <>
-      {isLoading ? (
-        <LoadingScreen onComplete={handleLoadingComplete} />
-      ) : (
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <Header />
-          {children}
-        </motion.div>
-      )}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+      >
+        <Header />
+        {children}
+      </motion.div>
+      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
     </>
   );
 }

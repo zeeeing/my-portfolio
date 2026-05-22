@@ -1,17 +1,4 @@
-export const contacts = [
-  {
-    type: "GitHub",
-    link: "https://github.com/zeeeing",
-  },
-  {
-    type: "LinkedIn",
-    link: "https://www.linkedin.com/in/chewzingjen/",
-  },
-  {
-    type: "Email",
-    link: "mailto:zjchew@singnet.com.sg",
-  },
-];
+import type { Project } from "../types";
 
 export const projects = [
   {
@@ -33,7 +20,8 @@ export const projects = [
     year: "2025",
     liveLink: "https://golden-tikkee.vercel.app",
     githubLink: "https://github.com/zeeeing/event-ticketer",
-    comingSoon: false,
+    featured: true,
+    status: "live",
   },
   {
     id: 2,
@@ -47,12 +35,13 @@ export const projects = [
       "TailwindCSS",
       "FastAPI",
       "Google OR-Tools",
-      "Replit (Deployment)",
+      "Replit",
     ],
     year: "2025",
     liveLink: "https://im-r2s.replit.app",
     githubLink: "https://github.com/zeeeing/residency-rotation-scheduler",
-    comingSoon: false,
+    featured: true,
+    status: "live",
   },
   {
     id: 3,
@@ -72,8 +61,8 @@ export const projects = [
     ],
     year: "2024 - Present",
     liveLink: "https://hypercharged.cc",
-    githubLink: "",
-    comingSoon: false,
+    featured: true,
+    status: "live",
   },
   {
     id: 4,
@@ -95,20 +84,8 @@ export const projects = [
       "Read AI API",
     ],
     year: "2025",
-    liveLink: "",
     githubLink: "https://github.com/zeeeing/write-now",
-    comingSoon: true,
+    featured: false,
+    status: "archived",
   },
-  {
-    id: 5,
-    image: "path/asteroids_thumbnail.png",
-    title: "Asteroids",
-    description:
-      "A recreation of the classic 1976 Atari game built with vanilla JavaScript and HTML5 Canvas.",
-    tools: ["JavaScript", "HTML5 Canvas"],
-    year: "2025",
-    liveLink: "",
-    githubLink: "https://github.com/zeeeing/asteroids",
-    comingSoon: true,
-  },
-];
+] satisfies Project[];
