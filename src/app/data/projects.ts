@@ -41,7 +41,7 @@ export const projects = [
     liveLink: "https://im-r2s.replit.app",
     githubLink: "https://github.com/zeeeing/residency-rotation-scheduler",
     featured: true,
-    status: "live",
+    status: "archived",
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ export const projects = [
     year: "2024 - Present",
     liveLink: "https://hypercharged.cc",
     featured: true,
-    status: "live",
+    status: "wip",
   },
   {
     id: 4,
@@ -86,6 +86,6 @@ export const projects = [
     year: "2025",
     githubLink: "https://github.com/zeeeing/write-now",
     featured: false,
-    status: "archived",
+    status: "wip",
   },
 ] satisfies Project[];
