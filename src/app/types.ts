@@ -5,8 +5,14 @@ export type Contact = {
 
 export type ProjectStatus = "live" | "archived" | "wip";
 
+export type ProjectCaseStudy = {
+  problem: string;
+  solution: string;
+};
+
 export type Project = {
   id: number;
+  slug: string;
   image: string;
   title: string;
   description: string;
@@ -16,4 +22,5 @@ export type Project = {
   tools: string[];
   featured: boolean;
   status: ProjectStatus;
+  caseStudy: ProjectCaseStudy;
 };

@@ -1,20 +1,9 @@
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
+import { projectPageStats } from "../data/projectStats";
 
 const featuredProjects = projects.filter((project) => project.featured);
 const otherProjects = projects.filter((project) => !project.featured);
-const liveProjects = projects.filter((project) => project.status === "live");
-const archivedProjects = projects.filter(
-  (project) => project.status === "archived"
-);
-const technologies = new Set(projects.flatMap((project) => project.tools));
-
-const projectStats = [
-  { label: "Projects", value: projects.length },
-  { label: "Live", value: liveProjects.length },
-  { label: "Archived", value: archivedProjects.length },
-  { label: "Technologies", value: technologies.size },
-];
 
 export default function Projects() {
   return (
@@ -24,7 +13,7 @@ export default function Projects() {
           Projects
         </h1>
         <dl className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-          {projectStats.map((stat) => (
+          {projectPageStats.map((stat) => (
             <div key={stat.label} className="flex items-baseline gap-1.5">
               <dt>{stat.label}</dt>
               <dd className="font-bold text-primary">{stat.value}</dd>

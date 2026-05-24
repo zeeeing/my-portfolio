@@ -6,16 +6,9 @@ import { motion } from "motion/react";
 import { GitHubIcon, LinkedInIcon, EmailIcon } from "./ui/icons";
 import { contacts } from "./data/contacts";
 import { projects } from "./data/projects";
+import { homeProjectStats } from "./data/projectStats";
 
 const featuredProjects = projects.filter((project) => project.featured);
-const liveProjects = projects.filter((project) => project.status === "live");
-const technologies = new Set(projects.flatMap((project) => project.tools));
-
-const snapshot = [
-  { label: "Projects", value: projects.length },
-  { label: "Live", value: liveProjects.length },
-  { label: "Technologies", value: technologies.size },
-];
 
 const focusAreas = [
   "Full-stack engineering",
@@ -95,12 +88,14 @@ export default function Home() {
           className="grid grid-cols-3 gap-3 rounded-2xl bg-[#7373731f] p-4 backdrop-blur"
           variants={fadeInUp}
         >
-          {snapshot.map((item) => (
+          {homeProjectStats.map((item) => (
             <div key={item.label} className="flex flex-col gap-1">
-              <span className="text-3xl font-semibold text-primary">
+              <span className="text-xl font-semibold text-primary sm:text-2xl md:text-3xl">
                 {item.value}
               </span>
-              <span>{item.label}</span>
+              <span className="text-[0.7rem] leading-4 sm:text-base">
+                {item.label}
+              </span>
             </div>
           ))}
         </motion.div>
@@ -131,13 +126,13 @@ export default function Home() {
           {featuredProjects.slice(0, 3).map((project) => (
             <Link
               key={project.id}
-              href="/projects"
+              href={`/projects/${project.slug}`}
               className="rounded-2xl bg-[#7373731f] p-4 transition hover:-translate-y-1 hover:bg-primary/10"
             >
               <div className="flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-semibold">{project.title}</h3>
-                  <span className="text-sm text-secondary">{project.year}</span>
+                  <span className="text-sm text-default-500">{project.year}</span>
                 </div>
                 <p className="line-clamp-3 text-sm leading-6 text-secondary">
                   {project.description}

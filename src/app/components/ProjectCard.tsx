@@ -6,25 +6,17 @@ import Link from "next/link";
 import { Card, CardBody, Chip, Button } from "@heroui/react";
 import { motion, useInView } from "motion/react";
 import { GitHubIcon, GlobeIcon } from "../ui/icons";
-import type { Project, ProjectStatus } from "../types";
+import { projectStatusConfig } from "../data/projectStatus";
+import type { Project } from "../types";
 
 interface ProjectCardProps {
   project: Project;
 }
 
-const statusConfig: Record<
-  ProjectStatus,
-  { label: string; color: "success" | "default" | "warning" }
-> = {
-  live: { label: "Live", color: "success" },
-  archived: { label: "Archived", color: "default" },
-  wip: { label: "In Progress", color: "warning" },
-};
-
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.05 });
-  const status = statusConfig[project.status];
+  const status = projectStatusConfig[project.status];
 
   return (
     <motion.div
@@ -72,6 +64,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
 
             <div className="mt-auto flex flex-wrap gap-2 pt-1">
+              <Button
+                as={Link}
+                href={`/projects/${project.slug}`}
+                variant="flat"
+                color="secondary"
+                size="sm"
+              >
+                Details
+              </Button>
               {project.liveLink && (
                 <Button
                   as={Link}
